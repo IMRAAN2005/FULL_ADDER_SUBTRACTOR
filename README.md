@@ -44,12 +44,29 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by: SHAIK MAHAMMAD IMRAAN
+RegisterNumber:212223100053
 */
-
+```
+module ex4(a,b,c,sum,carry,BO,DIFF);
+input a,b,c;
+output sum,carry,BO,DIFF;
+//Write syntax for full adder sum and carry in date flow modelling 
+wire a0;
+not (a0,a);
+assign sum=a^b^c;
+assign carry=(a&b)|(b&c)|(c&a);
+//Write syntax for full subtractor Borrow and Difference in date flow modelling
+assign DIFF=a^b^c;
+assign Bbar=(~a&b)|(b&c)|(~a&c);
+endmodule
+```
 **RTL Schematic**
+![image](https://github.com/IMRAAN2005/FULL_ADDER_SUBTRACTOR/assets/149347407/360e3f9d-1f72-4850-80f5-94eadbb51340)
 
 **Output Timing Waveform**
+![image](https://github.com/IMRAAN2005/FULL_ADDER_SUBTRACTOR/assets/149347407/a5e3cb43-db17-4a9b-aa43-f1aff36a9fa9)
 
 **Result:**
 
